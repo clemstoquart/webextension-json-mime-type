@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "json-mime-type-override",
+  "version": "1.0",
+
+  "description": "Allow to override any content type containing json to application/json",
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+
+  "background": {
+    "scripts": ["main.js"]
+  }
+}

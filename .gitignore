@@ -4,3 +4,6 @@
 *.ipr
 
 *.zip
+/web-ext-artifacts
+
+/node_modules

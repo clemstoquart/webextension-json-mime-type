@@ -1,0 +1,13 @@
+{
+  "name": "webextension-json-mime-type",
+  "version": "1.0.0",
+  "repository": "https://github.com/clemstoquart/webextension-json-mime-type",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "web-ext": "2.0.0"
+  },
+  "scripts": {
+    "build": "rm -r web-ext-artifacts || true && npm run lint && web-ext build",
+    "lint": "web-ext lint"
+  }
+}

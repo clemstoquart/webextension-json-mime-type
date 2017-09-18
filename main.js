@@ -12,9 +12,9 @@ function overrideJsonHeader(request) {
                 value: "application/json"
             };
             request.responseHeaders.push(jsonHeader);
-
-            resolve({responseHeaders: request.responseHeaders});
         }
+
+        resolve({responseHeaders: request.responseHeaders});
     });
 }
 

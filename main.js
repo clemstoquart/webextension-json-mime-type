@@ -1,30 +1,33 @@
 'use strict';
 
-function findJsonMimeType(header) {
+const findJsonMimeType = function (header) {
     return header.value.includes('json');
-}
+};
 
-function overrideJsonHeader(request) {
+const overrideJsonHeader = function (request) {
     return new Promise((resolve, reject) => {
         if (request.responseHeaders.find(findJsonMimeType)) {
             const jsonHeader = {
-                name: "Content-Type",
-                value: "application/json"
+                name: 'Content-Type',
+                value: 'application/json'
             };
             request.responseHeaders.push(jsonHeader);
         }
 
         resolve({responseHeaders: request.responseHeaders});
     });
-}
+};
 
 browser.webRequest.onHeadersReceived.addListener(
     overrideJsonHeader,
     {
-        urls: [ "<all_urls>" ]
+        urls: [ '<all_urls>' ]
     },
     [
-        "blocking",
-        "responseHeaders"
+        'blocking',
+        'responseHeaders'
     ]
 );
+
+exports.findJsonMimeType = findJsonMimeType;
+exports.overrideJsonHeader = overrideJsonHeader;

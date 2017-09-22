@@ -1,6 +1,5 @@
 'use strict';
-const assert = require('assert');
-const should = require('should');
+require('should');
 const sinon = require('sinon');
 global.browser = require('sinon-chrome/webextensions');
 
@@ -75,10 +74,10 @@ describe('Unit tests', function () {
             result.should.be.Promise();
             result.then(function (value) {
                 value.responseHeaders.should.have.lengthOf(3);
-                done();
+                return done();
             }).catch(function () {
                 done(new Error('Something went wrong, check your test !'));
-            })
+            });
         });
 
         it('should do nothing if headers list is empty', function (done) {
@@ -91,10 +90,10 @@ describe('Unit tests', function () {
             result.should.be.Promise();
             result.then(function (value) {
                 value.responseHeaders.should.be.empty();
-                done();
+                return done();
             }).catch(function () {
                 done(new Error('Something went wrong, check your test !'));
-            })
+            });
         });
 
     });

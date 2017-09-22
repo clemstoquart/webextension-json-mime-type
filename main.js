@@ -5,7 +5,7 @@ const findJsonMimeType = function (header) {
 };
 
 const overrideJsonHeader = function (request) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         if (request.responseHeaders.find(findJsonMimeType)) {
             const jsonHeader = {
                 name: 'Content-Type',

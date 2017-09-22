@@ -5,6 +5,12 @@
 
   "description": "Allow to override any content type containing json to application/json",
 
+  "applications": {
+    "gecko": {
+      "strict_min_version": "52.0"
+    }
+  },
+
   "permissions": [
     "webRequest",
     "webRequestBlocking",

@@ -4,15 +4,21 @@
   "repository": "https://github.com/clemstoquart/webextension-json-mime-type",
   "license": "MPL-2.0",
   "devDependencies": {
+    "eslint": "4.7.2",
+    "eslint-plugin-json": "1.2.0",
+    "eslint-plugin-mocha": "4.11.0",
+    "eslint-plugin-promise": "3.5.0",
     "mocha": "3.5.3",
-    "should": "13.0.1",
+    "should": "13.1.0",
     "sinon": "3.3.0",
     "sinon-chrome": "2.2.1",
     "web-ext": "2.0.0"
   },
   "scripts": {
     "build": "npm test && npm run lint && web-ext build --overwrite-dest",
-    "lint": "web-ext lint",
+    "lint": "npm run lint:eslint && npm run lint:webext",
+    "lint:eslint": "eslint --ext=.js,.json .",
+    "lint:webext": "web-ext lint",
     "test": "mocha"
   }
 }

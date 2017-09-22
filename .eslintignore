@@ -1,0 +1,10 @@
+# /node_modules/* are ignored by default
+
+# ide folder
+.idea
+
+# Build folder
+web-ext-artifacts
+
+# Auto generated file
+package-lock.json

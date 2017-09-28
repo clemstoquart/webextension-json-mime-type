@@ -19,6 +19,7 @@ describe('Unit tests', function () {
 
         it('should find json in application/json', function () {
             const headers = {
+                name: 'Content-Type',
                 value: 'application/json'
             };
 
@@ -29,6 +30,7 @@ describe('Unit tests', function () {
 
         it('should find json in application/vnd.spring-boot.actuator.v1+json', function () {
             const headers = {
+                name: 'Content-Type',
                 value: 'application/vnd.spring-boot.actuator.v1+json'
             };
 
@@ -39,6 +41,7 @@ describe('Unit tests', function () {
 
         it('should not find json for empty value', function () {
             const headers = {
+                name: 'Content-Type',
                 value: ''
             };
 
@@ -49,6 +52,7 @@ describe('Unit tests', function () {
 
         it('should not find json for text/html;charset=utf-8', function () {
             const headers = {
+                name: 'Content-Type',
                 value: 'text/html; charset=utf-8'
             };
 

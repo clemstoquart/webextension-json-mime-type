@@ -46,6 +46,8 @@ module.exports = {
         'semi': [
             'error',
             'always'
-        ]
+        ],
+        'curly': 'error',
+        'eqeqeq': 'error'
     }
 };

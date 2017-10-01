@@ -1,7 +1,9 @@
 'use strict';
 
 const findJsonMimeType = function (header) {
-    return header.value.includes('json');
+    if (header.name === undefined)
+        return false;
+    return header.name.toLowerCase() == 'content-type' && header.value.includes('json');
 };
 
 const overrideJsonHeader = function (request) {

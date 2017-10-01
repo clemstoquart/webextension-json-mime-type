@@ -4,13 +4,13 @@
   "repository": "https://github.com/clemstoquart/webextension-json-mime-type",
   "license": "MPL-2.0",
   "devDependencies": {
-    "eslint": "4.7.2",
+    "eslint": "4.8.0",
     "eslint-plugin-json": "1.2.0",
     "eslint-plugin-mocha": "4.11.0",
     "eslint-plugin-promise": "3.5.0",
     "mocha": "3.5.3",
     "should": "13.1.0",
-    "sinon": "3.3.0",
+    "sinon": "4.0.0",
     "sinon-chrome": "2.2.1",
     "web-ext": "2.0.0"
   },

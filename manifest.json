@@ -1,14 +1,13 @@
 {
   "manifest_version": 2,
   "name": "json-mime-type-override",
-  "version": "1.4",
+  "version": "1.5",
 
   "description": "Allow to override any content type containing json to application/json",
 
   "applications": {
     "gecko": {
-      "strict_min_version": "52.0",
-      "strict_max_version": "57.*"
+      "strict_min_version": "52.0"
     }
   },
 

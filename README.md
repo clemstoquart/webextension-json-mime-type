@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/clemstoquart/webextension-json-mime-type.svg?branch=master)](https://travis-ci.org/clemstoquart/webextension-json-mime-type)
 
-A simple web-extension that rewrites vendor specific json content-type value to the standard `application/json`.
+A simple web-extension (i.e. browser plugin) that rewrites vendor specific json content-type value to the standard `application/json`.
 
 For example : `application/vnd.spring-boot.actuator.v1+json` will be modified into `application/json`.
 

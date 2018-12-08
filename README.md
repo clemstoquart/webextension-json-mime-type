@@ -6,7 +6,7 @@ A simple web-extension that rewrites vendor specific json content-type value to 
 
 For example : `application/vnd.spring-boot.actuator.v1+json` will be modified into `application/json`.
 
-**If you don't want to develop a new feature/fix a bug, I recommend you to download the extension from here** https://addons.mozilla.org/fr/firefox/addon/json-content-type-override/.
+**If you don't want to develop a new feature/fix a bug, I recommend you to download the extension from here** https://addons.mozilla.org/firefox/addon/json-content-type-override/.
 
 ## Setup the project
 

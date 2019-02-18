@@ -1,6 +1,7 @@
 # JSON mime type override
 
 [![Build Status](https://travis-ci.org/clemstoquart/webextension-json-mime-type.svg?branch=master)](https://travis-ci.org/clemstoquart/webextension-json-mime-type)
+[![Known Vulnerabilities](https://snyk.io/test/github/clemstoquart/webextension-json-mime-type/badge.svg?targetFile=package.json)](https://snyk.io/test/github/clemstoquart/webextension-json-mime-type?targetFile=package.json)
 
 A simple web-extension that rewrites vendor specific json content-type value to the standard `application/json`.
 

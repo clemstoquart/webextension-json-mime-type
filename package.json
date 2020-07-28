@@ -12,7 +12,7 @@
     "should": "13.2.3",
     "sinon": "9.0.2",
     "sinon-chrome": "3.0.1",
-    "web-ext": "4.3.0"
+    "web-ext": "5.0.0"
   },
   "scripts": {
     "build": "npm test && npm run lint && web-ext build --overwrite-dest",

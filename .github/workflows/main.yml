@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   run:
-    name: Node 12
+    name: Lint and build
     runs-on: ubuntu-latest
 
     steps:
@@ -13,7 +13,7 @@ jobs:
       - name: Set Node.js version
         uses: actions/setup-node@master
         with:
-          node-version: 12
+          node-version: 14
       
       - run: node --version
       - run: npm --version

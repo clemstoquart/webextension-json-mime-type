@@ -6,7 +6,7 @@
   "devDependencies": {
     "eslint": "7.6.0",
     "eslint-plugin-json": "2.1.2",
-    "eslint-plugin-mocha": "7.0.1",
+    "eslint-plugin-mocha": "8.0.0",
     "eslint-plugin-promise": "4.2.1",
     "mocha": "8.1.1",
     "should": "13.2.3",

@@ -10,7 +10,7 @@
     "eslint-plugin-promise": "4.2.1",
     "mocha": "8.2.1",
     "should": "13.2.3",
-    "sinon": "9.2.1",
+    "sinon": "9.2.2",
     "sinon-chrome": "3.0.1",
     "web-ext": "5.4.1"
   },

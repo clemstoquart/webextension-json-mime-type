@@ -4,7 +4,7 @@
   "repository": "https://github.com/clemstoquart/webextension-json-mime-type",
   "license": "MPL-2.0",
   "devDependencies": {
-    "eslint": "7.17.0",
+    "eslint": "7.18.0",
     "eslint-plugin-json": "2.1.2",
     "eslint-plugin-mocha": "8.0.0",
     "eslint-plugin-promise": "4.2.1",

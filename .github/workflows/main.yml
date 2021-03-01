@@ -13,7 +13,7 @@ jobs:
           ref: master
 
       - name: Set Node.js version
-        uses: actions/setup-node@v2.1.4
+        uses: actions/setup-node@v2.1.5
         with:
           node-version: 14
       

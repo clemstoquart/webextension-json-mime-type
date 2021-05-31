@@ -6,6 +6,10 @@ For example : `application/vnd.spring-boot.actuator.v1+json` will be modified in
 
 **If you don't want to develop a new feature/fix a bug, I recommend you to download the extension from here** https://addons.mozilla.org/firefox/addon/json-content-type-override/.
 
+## Requirements
+
+Node 14 and npm 7.
+
 ## Setup the project
 
 Like any other npm based project just run :

@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install npm 7
-        run: npm i -g npm@7
+      - name: Install npm 8
+        run: npm i -g npm@8
       
       - run: node --version
       - run: npm --version

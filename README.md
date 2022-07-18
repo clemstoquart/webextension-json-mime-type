@@ -8,19 +8,19 @@ For example : `application/vnd.spring-boot.actuator.v1+json` will be modified in
 
 ## Requirements
 
-Node 16 and npm 7.
+Node 16 and npm 8.
 
 ## Setup the project
 
 Like any other npm based project just run :
 
-	npm install
+    npm install
 
 ## Build
 
 Simply run :
 
-	npm run build
+    npm run build
 
 First, this will check `manifest.json` is correct. Then, it will build a zip containing all the webextension files in the `web-ext-artifacts` folder.
 
@@ -28,4 +28,4 @@ First, this will check `manifest.json` is correct. Then, it will build a zip con
 
 You can also run the following command if you only want to to check that your `manifest.json` is correct :
 
-	npm run lint
+    npm run lint

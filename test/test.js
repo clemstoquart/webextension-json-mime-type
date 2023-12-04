@@ -1,6 +1,6 @@
 'use strict';
 const { describe, it } = require('node:test');
-require('should');
+const assert = require('node:assert').strict;
 const sinon = require('sinon');
 global.browser = require('sinon-chrome/webextensions');
 
@@ -26,7 +26,7 @@ describe('Unit tests', function () {
 
             const result = main.findJsonMimeType(headers);
 
-            result.should.be.true();
+            assert.strictEqual(result, true);
         });
 
         it('should find json in application/vnd.spring-boot.actuator.v1+json', function () {
@@ -37,7 +37,7 @@ describe('Unit tests', function () {
 
             const result = main.findJsonMimeType(headers);
 
-            result.should.be.true();
+            assert.strictEqual(result, true);
         });
 
         it('should not find json for empty value', function () {
@@ -48,7 +48,7 @@ describe('Unit tests', function () {
 
             const result = main.findJsonMimeType(headers);
 
-            result.should.be.false();
+            assert.strictEqual(result, false);
         });
 
         it('should not find json for text/html;charset=utf-8', function () {
@@ -59,7 +59,7 @@ describe('Unit tests', function () {
 
             const result = main.findJsonMimeType(headers);
 
-            result.should.be.false();
+            assert.strictEqual(result, false);
         });
 
     });
@@ -76,10 +76,8 @@ describe('Unit tests', function () {
 
             const result = main.overrideJsonHeader(request);
 
-            result.should.be.Promise();
-
             const value = await result;
-            value.responseHeaders.should.have.lengthOf(3);
+            assert.strictEqual(value.responseHeaders.length, 3);
         });
 
         it('should do nothing if headers list is empty', async () => {
@@ -89,10 +87,8 @@ describe('Unit tests', function () {
 
             const result = main.overrideJsonHeader(request);
 
-            result.should.be.Promise();
-
             const value = await result;
-            value.responseHeaders.should.be.empty();
+            assert.strictEqual(value.responseHeaders.length, 0);
         });
     });
 });

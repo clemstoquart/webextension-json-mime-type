@@ -1,4 +1,5 @@
 'use strict';
+const { describe, it } = require('node:test');
 require('should');
 const sinon = require('sinon');
 global.browser = require('sinon-chrome/webextensions');
@@ -65,7 +66,7 @@ describe('Unit tests', function () {
 
     describe('should override json header', function () {
 
-        it('should override json header application/vnd.spring-boot.actuator.v1+json', function (done) {
+        it('should override json header application/vnd.spring-boot.actuator.v1+json', async () => {
             const request = {
                 responseHeaders: [
                     {name: 'Content-Type', value: 'application/vnd.spring-boot.actuator.v1+json'},
@@ -76,15 +77,12 @@ describe('Unit tests', function () {
             const result = main.overrideJsonHeader(request);
 
             result.should.be.Promise();
-            result.then(function (value) {
-                value.responseHeaders.should.have.lengthOf(3);
-                return done();
-            }).catch(function () {
-                done(new Error('Something went wrong, check your test !'));
-            });
+
+            const value = await result;
+            value.responseHeaders.should.have.lengthOf(3);
         });
 
-        it('should do nothing if headers list is empty', function (done) {
+        it('should do nothing if headers list is empty', async () => {
             const request = {
                 responseHeaders: []
             };
@@ -92,14 +90,9 @@ describe('Unit tests', function () {
             const result = main.overrideJsonHeader(request);
 
             result.should.be.Promise();
-            result.then(function (value) {
-                value.responseHeaders.should.be.empty();
-                return done();
-            }).catch(function () {
-                done(new Error('Something went wrong, check your test !'));
-            });
+
+            const value = await result;
+            value.responseHeaders.should.be.empty();
         });
-
     });
-
 });

@@ -6,19 +6,19 @@ global.browser = require('sinon-chrome/webextensions');
 
 const main = require('../main');
 
-describe('Unit tests', function () {
+describe('Unit tests', () => {
 
-    describe('global behaviour', function () {
+    describe('global behaviour', () => {
 
-        it('should register a listener for all http requests', function() {
+        it('should register a listener for all http requests', () => {
             sinon.assert.calledOnce(browser.webRequest.onHeadersReceived.addListener);
         });
 
     });
 
-    describe('should find json header', function () {
+    describe('should find json header', () => {
 
-        it('should find json in application/json', function () {
+        it('should find json in application/json', () => {
             const headers = {
                 name: 'Content-Type',
                 value: 'application/json'
@@ -29,7 +29,7 @@ describe('Unit tests', function () {
             assert.strictEqual(result, true);
         });
 
-        it('should find json in application/vnd.spring-boot.actuator.v1+json', function () {
+        it('should find json in application/vnd.spring-boot.actuator.v1+json', () => {
             const headers = {
                 name: 'Content-Type',
                 value: 'application/vnd.spring-boot.actuator.v1+json'
@@ -40,7 +40,7 @@ describe('Unit tests', function () {
             assert.strictEqual(result, true);
         });
 
-        it('should not find json for empty value', function () {
+        it('should not find json for empty value', () => {
             const headers = {
                 name: 'Content-Type',
                 value: ''
@@ -51,7 +51,7 @@ describe('Unit tests', function () {
             assert.strictEqual(result, false);
         });
 
-        it('should not find json for text/html;charset=utf-8', function () {
+        it('should not find json for text/html;charset=utf-8', () => {
             const headers = {
                 name: 'Content-Type',
                 value: 'text/html; charset=utf-8'
@@ -64,7 +64,7 @@ describe('Unit tests', function () {
 
     });
 
-    describe('should override json header', function () {
+    describe('should override json header', () => {
 
         it('should override json header application/vnd.spring-boot.actuator.v1+json', async () => {
             const request = {

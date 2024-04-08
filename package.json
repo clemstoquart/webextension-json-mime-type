@@ -5,7 +5,7 @@
   "license": "MPL-2.0",
   "type": "commonjs",
   "devDependencies": {
-    "eslint": "8.57.0",
+    "eslint": "9.0.0",
     "eslint-plugin-json": "3.1.0",
     "eslint-plugin-promise": "6.1.1",
     "sinon": "17.0.1",

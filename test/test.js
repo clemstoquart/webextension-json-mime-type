@@ -1,16 +1,22 @@
 'use strict';
-const { describe, it } = require('node:test');
-const assert = require('node:assert').strict;
-const sinon = require('sinon');
-global.browser = require('sinon-chrome/webextensions');
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+import sinon from 'sinon';
+import firefox from 'sinon-chrome/webextensions/index.js';
+import { findJsonMimeType, overrideJsonHeader } from '../main.js';
 
-const main = require('../main');
+global.browser = {};
 
 describe('Unit tests', () => {
 
     describe('global behaviour', () => {
 
+        beforeEach(() => {
+            global.browser = {};
+        });
+
         it('should register a listener for all http requests', () => {
+            global.browser = {};
             sinon.assert.calledOnce(browser.webRequest.onHeadersReceived.addListener);
         });
 
@@ -24,7 +30,7 @@ describe('Unit tests', () => {
                 value: 'application/json'
             };
 
-            const result = main.findJsonMimeType(headers);
+            const result = findJsonMimeType(headers);
 
             assert.strictEqual(result, true);
         });
@@ -35,7 +41,7 @@ describe('Unit tests', () => {
                 value: 'application/vnd.spring-boot.actuator.v1+json'
             };
 
-            const result = main.findJsonMimeType(headers);
+            const result = findJsonMimeType(headers);
 
             assert.strictEqual(result, true);
         });
@@ -46,7 +52,7 @@ describe('Unit tests', () => {
                 value: ''
             };
 
-            const result = main.findJsonMimeType(headers);
+            const result = findJsonMimeType(headers);
 
             assert.strictEqual(result, false);
         });
@@ -57,7 +63,7 @@ describe('Unit tests', () => {
                 value: 'text/html; charset=utf-8'
             };
 
-            const result = main.findJsonMimeType(headers);
+            const result = findJsonMimeType(headers);
 
             assert.strictEqual(result, false);
         });
@@ -74,7 +80,7 @@ describe('Unit tests', () => {
                 ]
             };
 
-            const result = main.overrideJsonHeader(request);
+            const result = overrideJsonHeader(request);
 
             const value = await result;
             assert.strictEqual(value.responseHeaders.length, 3);
@@ -85,7 +91,7 @@ describe('Unit tests', () => {
                 responseHeaders: []
             };
 
-            const result = main.overrideJsonHeader(request);
+            const result = overrideJsonHeader(request);
 
             const value = await result;
             assert.strictEqual(value.responseHeaders.length, 0);

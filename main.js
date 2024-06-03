@@ -1,13 +1,13 @@
 'use strict';
 
-const findJsonMimeType = function (header) {
+export const findJsonMimeType = function (header) {
     if (header.name === undefined) {
         return false;
     }
     return header.name.toLowerCase() === 'content-type' && header.value.includes('json');
 };
 
-const overrideJsonHeader = function (request) {
+export const overrideJsonHeader = function (request) {
     return new Promise((resolve) => {
         if (request.responseHeaders.find(findJsonMimeType)) {
             const jsonHeader = {
@@ -31,6 +31,3 @@ browser.webRequest.onHeadersReceived.addListener(
         'responseHeaders'
     ]
 );
-
-exports.findJsonMimeType = findJsonMimeType;
-exports.overrideJsonHeader = overrideJsonHeader;

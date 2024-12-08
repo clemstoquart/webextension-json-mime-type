@@ -8,7 +8,7 @@ For example : `application/vnd.spring-boot.actuator.v1+json` will be modified in
 
 ## Requirements
 
-Node 20 and npm 10.
+Node 22 and npm 10.
 
 ## Set up the project
 

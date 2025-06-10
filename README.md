@@ -1,6 +1,6 @@
 # JSON mime type override
 
-A simple web-extension that rewrites vendor specific json content-type value to the standard `application/json`.
+A simple web-extension that rewrites vendor specific content-type value to the standard one.
 
 For example : `application/vnd.spring-boot.actuator.v1+json` will be modified into `application/json`.
 
@@ -8,7 +8,7 @@ For example : `application/vnd.spring-boot.actuator.v1+json` will be modified in
 
 ## Requirements
 
-Node 22 and npm 10.
+Node 22 and npm 11.
 
 ## Set up the project
 

@@ -98,7 +98,10 @@ describe('Unit tests', () => {
 
             const value = await result;
             assert.strictEqual(value.responseHeaders.length, 3);
-            assert.strictEqual(value.responseHeaders[2], 'application/json');
+            assert.deepStrictEqual(value.responseHeaders[2], {
+                name: 'Content-Type',
+                value: 'application/json',
+            });
         });
 
         it('should override application/vnd.custom+xml to application/xml', async () => {
@@ -116,7 +119,10 @@ describe('Unit tests', () => {
 
             const value = await result;
             assert.strictEqual(value.responseHeaders.length, 3);
-            assert.strictEqual(value.responseHeaders[2], 'application/xml');
+            assert.deepStrictEqual(value.responseHeaders[2], {
+                name: 'Content-Type',
+                value: 'application/xml',
+            });
         });
 
         it('should do nothing if headers list is empty', async () => {
@@ -132,9 +138,7 @@ describe('Unit tests', () => {
 
         it('should do nothing if there is no Content-Type', async () => {
             const request = {
-                responseHeaders: [
-                    { name: 'Status', value: '200 OK' },
-                ],
+                responseHeaders: [{ name: 'Status', value: '200 OK' }],
             };
 
             const result = main.overrideVendorContentType(request);

@@ -18,7 +18,7 @@ const overrideVendorContentType = (request) =>
         if (vendorCTH) {
             const genericCTH = {
                 name: 'Content-Type',
-                value: 'application/' + vendorCTH.value.substring(vendorCTH.value.indexOf('+') + 1),
+                value: `application/${vendorCTH.value.substring(vendorCTH.value.indexOf('+') + 1)}`,
             };
             request.responseHeaders.push(genericCTH);
         }

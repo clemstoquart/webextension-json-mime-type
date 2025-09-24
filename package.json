@@ -5,10 +5,10 @@
     "license": "MPL-2.0",
     "type": "commonjs",
     "devDependencies": {
-        "@biomejs/biome": "2.1.4",
+        "@biomejs/biome": "2.2.4",
         "sinon": "21.0.0",
         "sinon-chrome": "3.0.1",
-        "web-ext": "8.9.0"
+        "web-ext": "8.10.0"
     },
     "scripts": {
         "build": "npm test && npm run lint && web-ext build --overwrite-dest",

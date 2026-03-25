@@ -8,10 +8,10 @@
         "node": ">=24"
     },
     "devDependencies": {
-        "@biomejs/biome": "2.4.4",
-        "sinon": "21.0.1",
+        "@biomejs/biome": "2.4.9",
+        "sinon": "21.0.3",
         "sinon-chrome": "3.0.1",
-        "web-ext": "9.3.0"
+        "web-ext": "10.0.0"
     },
     "scripts": {
         "build": "npm test && npm run lint && web-ext build --overwrite-dest",

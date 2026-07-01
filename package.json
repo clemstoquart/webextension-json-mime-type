@@ -11,7 +11,7 @@
         "@biomejs/biome": "2.4.16",
         "sinon": "22.0.0",
         "sinon-chrome": "3.0.1",
-        "web-ext": "10.3.0"
+        "web-ext": "10.4.0"
     },
     "scripts": {
         "build": "npm test && npm run lint && web-ext build --overwrite-dest",

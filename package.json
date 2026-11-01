@@ -1,25 +1,25 @@
 {
-    "name": "webextension-json-mime-type",
-    "version": "1.0.0",
-    "repository": "https://github.com/clemstoquart/webextension-json-mime-type",
-    "license": "MPL-2.0",
-    "type": "commonjs",
-    "engines": {
-        "node": ">=24"
-    },
-    "devDependencies": {
-        "@biomejs/biome": "2.6.4",
-        "sinon": "22.1.0",
-        "sinon-chrome": "3.0.1",
-        "web-ext": "10.8.0"
-    },
-    "scripts": {
-        "build": "npm test && npm run lint && web-ext build --overwrite-dest",
-        "lint": "npm run lint:check && npm run lint:webext",
-        "lint:check": "biome check",
-        "lint:write": "biome check --write",
-        "migrate": "biome migrate --write",
-        "lint:webext": "web-ext lint",
-        "test": "node --test"
-    }
+  "name": "webextension-json-mime-type",
+  "version": "1.0.0",
+  "repository": "https://github.com/clemstoquart/webextension-json-mime-type",
+  "license": "MPL-2.0",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.4",
+    "sinon": "22.1.0",
+    "sinon-chrome": "3.0.1",
+    "web-ext": "10.8.0"
+  },
+  "scripts": {
+    "build": "npm test && npm run lint && web-ext build --overwrite-dest",
+    "lint": "npm run lint:check && npm run lint:webext",
+    "lint:check": "biome check",
+    "lint:write": "biome check --write",
+    "migrate": "biome migrate --write",
+    "lint:webext": "web-ext lint",
+    "test": "node --test"
+  }
 }
